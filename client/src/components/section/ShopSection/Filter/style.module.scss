@@ -1,0 +1,15 @@
+.heading {
+  color: #121212;
+  font-feature-settings: "liga" off, "clig" off;
+  font-family: Inter;
+  font-size: 20px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: 32px;
+}
+
+.root {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
