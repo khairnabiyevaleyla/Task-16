@@ -5,9 +5,7 @@ import { useQuery } from "@tanstack/react-query";
 import { QueryKeys } from "@/constants/QuerieKeys";
 import { getApi } from "@/http/api";
 
-const CategorySection = () => {
-  const [category, setCategory] = useState("");
-
+const CategorySection = ({ setCategory }) => {
   const { data } = useQuery({
     queryKey: [QueryKeys.categories],
     queryFn: () => getApi(`/categories`),
@@ -22,7 +20,7 @@ const CategorySection = () => {
             <li
               key={index}
               className={styles.text}
-              onClick={() => setCategory(item.name)}
+              onClick={() => setCategory(item?.name)}
             >
               {item.name}
             </li>

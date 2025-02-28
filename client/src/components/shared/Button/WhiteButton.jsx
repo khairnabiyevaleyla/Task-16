@@ -1,10 +1,10 @@
 import React from "react";
 import styles from "./style.module.scss";
 
-const WhiteButton = () => {
+const WhiteButton = ({ onclick }) => {
   return (
     <div className={styles.root}>
-      <button>Load more</button>
+      <button onClick={onclick}>Load more</button>
     </div>
   );
 };
