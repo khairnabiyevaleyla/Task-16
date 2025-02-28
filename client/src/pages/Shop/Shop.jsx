@@ -9,16 +9,28 @@ import ProductCard from "@/components/shared/ProductCard/ProductCard";
 import { useQuery } from "@tanstack/react-query";
 import { QueryKeys } from "@/constants/QuerieKeys";
 import { getApi } from "@/http/api";
+import RangeSlider from "react-range-slider-input";
+import "react-range-slider-input/dist/style.css";
+import SidebarTitle from "@/components/shared/SideBarTitle/SidebarTitle";
 
 const Shop = () => {
+  const [startValue, setStartValue] = useState(0);
+  const [endValue, setEndValue] = useState(1000);
   const [pageSize, setPageSize] = useState(3);
   const [pageLimit, setPageLimit] = useState(1);
   const [categoryName, setCategoryName] = useState("");
   const { data } = useQuery({
-    queryKey: [QueryKeys.products, pageSize, pageLimit, categoryName],
+    queryKey: [
+      QueryKeys.products,
+      pageSize,
+      pageLimit,
+      categoryName,
+      startValue,
+      endValue,
+    ],
     queryFn: () =>
       getApi(
-        `/products?pagination[pageSize]=${pageSize}&pagination[page]=${pageLimit}&populate=*&filters[categories][name][$contains]=${categoryName}`
+        `/products?pagination[pageSize]=${pageSize}&pagination[page]=${pageLimit}&populate=*&filters[categories][name][$contains]=${categoryName}&filters[finalprice][$gte]=${startValue}&filters[finalprice][$lte]=${endValue}`
       ),
   });
 
@@ -32,6 +44,24 @@ const Shop = () => {
           <div className="col-span-3">
             <FilterSection />
             <CategorySection setCategory={setCategoryName} />
+            <div className={styles.pricebox}>
+              <SidebarTitle title="PRICE" />
+              <RangeSlider
+                min={0}
+                max={1000}
+                defaultValue={[0, 1000]}
+                value={0}
+                onInput={(value) => {
+                  setStartValue(value[0]);
+                  setEndValue(value[1]);
+                }}
+                className={styles.customSlider}
+              />
+              <div className="flex justify-between items-center gap-30 my-3">
+                <button>{startValue}</button>
+                <button>{endValue}</button>
+              </div>
+            </div>
           </div>
           <div className="col-span-9">
             <Toolbar />

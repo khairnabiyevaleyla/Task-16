@@ -40,3 +40,20 @@
     color: #fff;
   }
 }
+
+.pricebox {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 16px;
+  padding: 16px;
+  button {
+    color: #6c7275;
+    font-feature-settings: "liga" off, "clig" off;
+    font-family: Inter;
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: 22px;
+  }
+}
