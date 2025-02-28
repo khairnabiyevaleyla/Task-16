@@ -19,6 +19,9 @@ const Shop = () => {
   const [pageSize, setPageSize] = useState(3);
   const [pageLimit, setPageLimit] = useState(1);
   const [categoryName, setCategoryName] = useState("");
+  const [gridCount, setGridCount] = useState(2);
+
+  console.log(gridCount);
   const { data } = useQuery({
     queryKey: [
       QueryKeys.products,
@@ -64,8 +67,8 @@ const Shop = () => {
             </div>
           </div>
           <div className="col-span-9">
-            <Toolbar />
-            <div className="grid grid-cols-3 my-10">
+            <Toolbar setGrid={setGridCount} />
+            <div className={`grid grid-cols-${gridCount} my-10`}>
               {" "}
               {data &&
                 data?.data?.map((card, index) => (
