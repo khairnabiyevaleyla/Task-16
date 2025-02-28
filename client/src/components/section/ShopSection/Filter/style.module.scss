@@ -1,15 +1,49 @@
-.heading {
-  color: #121212;
-  font-feature-settings: "liga" off, "clig" off;
-  font-family: Inter;
-  font-size: 20px;
-  font-style: normal;
-  font-weight: 600;
-  line-height: 32px;
-}
-
 .root {
   display: flex;
   align-items: center;
   gap: 8px;
+  padding: 8px 12px;
+  border-radius: 8px;
+  cursor: pointer;
+
+  @media (max-width: 768px) {
+    gap: 6px;
+    padding: 6px 10px;
+  }
+
+  @media (max-width: 480px) {
+    gap: 4px;
+    padding: 4px 8px;
+  }
+}
+
+.heading {
+  color: #121212;
+  font-family: Inter;
+  font-size: clamp(14px, 2vw, 20px);
+  font-weight: 600;
+  line-height: 1.5;
+
+  @media (max-width: 768px) {
+    font-size: 16px;
+  }
+
+  @media (max-width: 480px) {
+    font-size: 14px;
+  }
+}
+
+.icon {
+  width: 24px;
+  height: 24px;
+
+  @media (max-width: 768px) {
+    width: 20px;
+    height: 20px;
+  }
+
+  @media (max-width: 480px) {
+    width: 18px;
+    height: 18px;
+  }
 }
