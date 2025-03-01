@@ -24,7 +24,10 @@ const Header = () => {
           <div className={styles.icons}>
             <SearchIcon stroke="#141718" width="24" height="24" />
             <UserIcon stroke="#141718" width="24" height="24" />
-            <ShopIcon stroke="#141718" width="24" height="24" />
+            <Link to="/cart">
+              {" "}
+              <ShopIcon stroke="#141718" width="24" height="24" />
+            </Link>
             <div className="relative">
               <EllipseIcon width="24" height="24" />
               <span className={styles.count}>0</span>
