@@ -19,6 +19,6 @@ export const postApi = async (url, payload) => {
     const response = await AxiosInstance.post(url, payload);
     return response.data;
   } catch (error) {
-    console.error(error);
+    console.log(error);
   }
 };
