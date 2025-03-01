@@ -1,0 +1,28 @@
+.link {
+  color: #605f5f;
+  font-feature-settings: "liga" off, "clig" off;
+  font-family: Inter;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 24px;
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  transition: 0.3s ease-in-out;
+  &:hover {
+    color: #121212;
+  }
+  &.active {
+    color: #121212;
+    &:hover {
+      color: #605f5f;
+    }
+  }
+}
+
+.links {
+  display: flex;
+  gap: 16px;
+  align-items: center;
+}

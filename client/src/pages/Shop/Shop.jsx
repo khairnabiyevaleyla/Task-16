@@ -19,7 +19,7 @@ const Shop = () => {
   const [pageSize, setPageSize] = useState(3);
   const [pageLimit, setPageLimit] = useState(1);
   const [categoryName, setCategoryName] = useState("");
-  const [gridCount, setGridCount] = useState(2);
+  const [gridCount, setGridCount] = useState(3);
 
   console.log(gridCount);
   const { data } = useQuery({
@@ -78,6 +78,7 @@ const Shop = () => {
                     name={card.name}
                     finalprice={card.finalprice}
                     oldprice={card.oldprice}
+                    LinkId={card.id}
                   />
                 ))}{" "}
             </div>

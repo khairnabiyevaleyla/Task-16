@@ -1,0 +1,68 @@
+.root {
+  width: 548px;
+
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 24px;
+}
+
+.image {
+  position: relative;
+  height: 729px;
+
+  img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+  }
+  &:hover .wishlist {
+    right: 16px;
+    opacity: 1;
+  }
+  &:hover .button {
+    bottom: 16px;
+    opacity: 1;
+  }
+}
+
+.tags {
+  display: inline-flex;
+  flex-direction: column;
+  gap: 8px;
+  position: absolute;
+  align-items: flex-start;
+  top: 32px;
+  left: 32px;
+  span {
+    padding: 8px 18px;
+    gap: 8px;
+    border-radius: 4px;
+    font-family: Inter;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 16px;
+    text-align: center;
+  }
+}
+
+.bottomimage {
+  display: flex;
+  align-items: flex-start;
+  gap: 24px;
+  width: 548px;
+  margin-bottom: 50px;
+}
+
+.imagebox {
+  width: 167px;
+  height: 167px;
+
+  img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    overflow: hidden;
+  }
+}

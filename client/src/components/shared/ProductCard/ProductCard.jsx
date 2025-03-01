@@ -4,11 +4,11 @@ import styles from "./style.module.scss";
 import StarIcon from "@/components/icons/StarIcon";
 import { Link } from "react-router";
 
-const ProductCard = ({ name, finalprice, oldprice, image }) => {
+const ProductCard = ({ name, finalprice, oldprice, image, LinkId }) => {
   const rating = 5;
 
   return (
-    <Link to="/">
+    <Link to={`/shop/${LinkId}`}>
       {" "}
       <div className={styles.root}>
         <div className={styles.image}>
